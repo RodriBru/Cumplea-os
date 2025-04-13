@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sobre = document.getElementById('sobre');
-    const audio = document.getElementById('magia');
-  
-    sobre.addEventListener('click', () => {
-      document.body.classList.add('abierto');
-  
-      // Reproduce el sonido
-      audio.currentTime = 0;
-      audio.play().catch(() => {
-        console.log("El navegador bloqueó la reproducción automática.");
-      });
-    });
+  const sobre = document.getElementById('sobre');
+  const carta = document.getElementById('carta');
+  const audio = document.getElementById('magia');
+
+  sobre.addEventListener('click', () => {
+    // Reproducir el audio solo después del clic
+    audio.play().catch(e => console.log('No se pudo reproducir el audio:', e));
+
+    // Mostrar la carta
+    document.body.classList.add('abierto');
   });
+});
 
   
   // CONTADOR
